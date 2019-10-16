@@ -1,1 +1,1 @@
-This is my Rock, Paper, Scissors project for Project Odin.
+This is my Rock, Paper, Scissors project for [the Odin project](https://www.theodinproject.com).
