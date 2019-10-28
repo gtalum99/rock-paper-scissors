@@ -5,106 +5,22 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <script>
-
-            // initialize playerScore and computerScore at 0 to begin game
-            let playerScore = 0
-            let computerScore = 0
-
-            // define function computerPlay: computer selection of rock, paper, or scissors
-            function computerPlay() {
-
-                // generate random number
-                let number = Math.floor( Math.random() *3 );
-
-                //convert number to rock, paper, or scissors
-                if ( number < 1 ) {
-                    return "rock";
-
-                } else if ( number > 1 ) {
-                    return "scissors";
-
-                } else {
-                    return "paper";
-
-                }
-
-            // close function computerPlay
-            }    
-
-            //define function playRound: play one round
-            function playRound( playerSelection, computerSelection) {
-
-                // display player selection and computer selection
-                console.log( "You chose " + playerSelection + " and the computer chose " + computerSelection + ".");
-
-                // determine who wins the round: 0 = tie, 1 = player wins, 2 = computer wins
-                if ( playerSelection == computerSelection ) {
-                    return 0;
-
-                 } else if ( playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "rock") {
-                    return 1;
-
-                } else {
-                    return 2;
-
-                }
-
-            // close function playRound
-            }
-
-            // define function game: play 5 rounds
-            function game() {
-                        
-                for ( round = 1; round < 6; round ++ ) {
-
-                    // player selection of rock, paper, or scissors
-                    let playerSelection = prompt( "rock, paper, or scissors?" ).toLowerCase();
-
-                    // report computer selection returned from function computerPlay
-                    let computerSelection = computerPlay();
-
-                    //report results of round 
-                    if ( playRound( playerSelection, computerSelection ) == 0 ) {
-                        console.log( "Round " + round + " is a tie!  Both you and the computer chose " + playerSelection + "." );
-
-                    } else if ( playRound( playerSelection, computerSelection) == 1 ) {
-                        console.log( "You win Round " + round + "! " + playerSelection + " beats " + computerSelection + "!" );
-                        playerScore++
-
-                    }else {
-                        console.log( "You lose Round " + round + ". " + computerSelection + " beats " + playerSelection + "." );
-                        computerScore++
-
-                    }
-                    
-                    // tally score through latest round
-                    console.log( "Your score: " + playerScore + ", Computer score: " + computerScore);
-
-                //  close for loop
-                }
-
-            // close function game
-            }
-
-            // invoke function game:  play game
-            game()
-
-            // compare final scores and announce winner
-            if ( playerScore > computerScore ) {
-
-                console.log( "Congratulations!  You won this game!" );
-
-            }else if ( playerScore < computerScore ) {
-
-                console.log( "You lost this game.  Better luck next time!" );
-
-            } else {
-
-                console.log( "The game ended in a tie!" );
-
-            }
-
-        </script>
+      <h1>
+        Let's Play Rock, Paper, Scissors!
+      </h1>
+      <br>
+      <br>
+      <div id="question">
+        Which do you choose?  Rock, Paper, or Scissors?
+      </div>
+      <br>
+      <br>
+      <div id="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+      </div>
+      <div id="gameContainer"></div>
+      <script src="rps.js"></script>
     </body>
 </html>
